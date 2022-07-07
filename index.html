@@ -17,16 +17,15 @@
   </head>
   <body>
     <div class="container">
-      <figure class="image-container">
-        <img id="image" />
-        <figcaption id="imageCaption">file name will be shown here</figcaption>
-      </figure>
-
       <input id="imageInput" type="file" multiple accept="image/*" />
       <label for="imageInput">
         <i class="fa-solid fa-arrow-up-from-bracket"></i> &nbsp;
         <span>choose from your files</span>
       </label>
+
+      <p id="selected">0 files seleted</p>
+
+      <div id="imgsContainer" class="images-container"></div>
     </div>
 
     <script src="main.js"></script>

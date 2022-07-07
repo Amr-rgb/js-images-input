@@ -1,12 +1,30 @@
-const img = document.getElementById("image");
-const imgCaption = document.getElementById("imageCaption");
-const imgInput = document.getElementById("imageInput");
+const imgsContainer = document.getElementById("imgsContainer");
+const inputBtn = document.getElementById("imageInput");
+const selected = document.getElementById("selected");
 
-imgInput.addEventListener("change", () => {
-  const reader = new FileReader();
-  reader.readAsDataURL(imgInput.files[0]);
-  reader.onload = () => {
-    img.setAttribute("src", reader.result);
-    imgCaption.textContent = imgInput.files[0].name;
-  };
+inputBtn.addEventListener("change", () => {
+  const frag = document.createDocumentFragment();
+  selected.textContent = inputBtn.files.length + " files selected";
+
+  for (item of inputBtn.files) {
+    const reader = new FileReader();
+    reader.readAsDataURL(item);
+
+    const fig = document.createElement("figure");
+    const figcaption = document.createElement("figcaption");
+    const img = document.createElement("img");
+
+    fig.className = "image-container";
+    fig.append(img, figcaption);
+
+    reader.onload = () => {
+      img.setAttribute("src", reader.result);
+      figcaption.textContent = item.name;
+    };
+
+    frag.append(fig);
+  }
+
+  imgsContainer.innerHTML = "";
+  imgsContainer.append(frag);
 });
