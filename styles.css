@@ -1,0 +1,57 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background: #f3f3f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background: #fff;
+  width: 80%;
+  max-width: 700px;
+  padding: 3em 2em;
+  border-radius: 12px;
+}
+
+.container .image-container {
+  width: 90%;
+  margin: auto;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 600px;
+  margin: auto;
+  display: block;
+}
+
+.image-container figcaption {
+  margin: 1em 0 3em;
+  text-align: center;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+label {
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  margin: auto;
+  cursor: pointer;
+  background: rgb(43, 153, 255);
+  color: #fff;
+  padding: 1.25em 0;
+  border-radius: 6px;
+  text-align: center;
+}
